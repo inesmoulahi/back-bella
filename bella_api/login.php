@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 $data = json_decode(file_get_contents("php://input"), true);
 
 $email = $conn->real_escape_string($data['email']);
-$password = md5($conn->real_escape_string($data['password'])); // doit correspondre à la méthode dans register
+$password = md5($conn->real_escape_string($data['password']));
 
 $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
 $result = $conn->query($sql);
@@ -40,3 +40,4 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+

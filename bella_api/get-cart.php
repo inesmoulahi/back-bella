@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die(json_encode(["success" => false, "message" => "Erreur de connexion"]));
 }
 
-$user_id = 14; // ID fixe pour test (à rendre dynamique plus tard)
+$user_id = 14; 
 
 $sql = "SELECT * FROM cart WHERE user_id = $user_id";
 $result = $conn->query($sql);
@@ -28,3 +28,4 @@ echo json_encode($cart_items);
 
 $conn->close();
 ?>
+

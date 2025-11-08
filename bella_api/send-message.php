@@ -27,7 +27,7 @@ $email = $conn->real_escape_string($data['email']);
 $number = $conn->real_escape_string($data['number']);
 $message = $conn->real_escape_string($data['message']);
 $user_id = isset($data['user_id']) ? intval($data['user_id']) : 0;
-// ✅ Validation du format email
+
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo json_encode(["success" => false, "message" => "Email invalide"]);
     exit();
@@ -43,3 +43,4 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
+

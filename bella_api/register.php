@@ -18,10 +18,10 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 $name = $conn->real_escape_string($data['name']);
 $email = $conn->real_escape_string($data['email']);
-$password = md5($conn->real_escape_string($data['password'])); // crypté
+$password = md5($conn->real_escape_string($data['password']));
 $user_type = 'user';
 
-// Vérifier si l'email existe déjà
+
 $check = $conn->query("SELECT * FROM users WHERE email = '$email'");
 if ($check->num_rows > 0) {
     echo json_encode(["success" => false, "message" => "Email déjà enregistré."]);
@@ -36,3 +36,4 @@ if ($check->num_rows > 0) {
 
 $conn->close();
 ?>
+

@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-$user_id = 14; // à remplacer plus tard par l'utilisateur connecté
+$user_id = 14; 
 $name = $conn->real_escape_string($data['name']);
 $number = $conn->real_escape_string($data['number']);
 $email = $conn->real_escape_string($data['email']);
@@ -42,3 +42,4 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
+

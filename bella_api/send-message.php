@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-// Vérifier que les champs existent et ne sont pas vides
+
 if (
     empty($data['name']) ||
     empty($data['email']) ||
@@ -43,4 +43,5 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
+
 

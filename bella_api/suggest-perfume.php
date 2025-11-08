@@ -18,7 +18,7 @@ $budget = strtolower($data['budget'] ?? '');
 
 $productId = null;
 
-// 🔍 Sélection intelligente selon les réponses
+
 if ($genre === 'femme' && $type === 'floral' && $occasion === 'soirée' && $budget === 'luxe') {
     $productId = 17; // AQUA ALLEGORIA
 } elseif ($genre === 'femme' && $type === 'lavande' && $occasion === 'quotidien') {
@@ -55,3 +55,4 @@ if ($result && $result->num_rows > 0) {
 
 $conn->close();
 ?>
+

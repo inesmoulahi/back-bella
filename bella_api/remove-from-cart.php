@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 include 'config.php';
 
-$id = $_GET['id']; // ID du produit dans le panier
+$id = $_GET['id']; 
 
 $sql = "DELETE FROM cart WHERE id = '$id'";
 if (mysqli_query($conn, $sql)) {
@@ -11,3 +11,4 @@ if (mysqli_query($conn, $sql)) {
     echo json_encode(["success" => false, "message" => "Erreur suppression"]);
 }
 ?>
+
